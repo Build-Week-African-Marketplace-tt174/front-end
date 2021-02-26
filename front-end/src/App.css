@@ -1,38 +1,37 @@
-.App {
+html{
+	font-size: 62.5%;
+}
+
+/* About Page */
+
+.team {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.member {
+  align-items: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.profile {
+  border-radius: 50%;
+  width: 25rem;
+  margin: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.github {
+  width: 5rem;
+  margin: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.title {
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.role {
+  text-align: center;
+  border-top: solid grey 0.3rem;
+  margin-top: 5rem;
+  padding-top: 5rem;
 }
