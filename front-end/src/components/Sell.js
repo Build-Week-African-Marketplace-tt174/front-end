@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import TextField from "@material-ui/core/TextField";
+import MenuItem from '@material-ui/core/MenuItem';
+
+
 
 const initialState = {
     category: "",
@@ -6,6 +10,8 @@ const initialState = {
     item: "",
     price: ""
 };
+
+const cat = {}
 
 const Sell = () => {
 
@@ -19,34 +25,28 @@ const Sell = () => {
 
 
     return (
-        <form>
-            <label htmlFor="item">Item: </label>
-            <input name="item" type="text" onChange={handleChange} />
+        <form className="sellitem">
+            <TextField name="item" placeholder="Item" onChange={handleChange} />
 
-            <label htmlFor="price">Price: </label>
-            <input name="price" type="number" />
+            <TextField name="price" type="number" placeholder="Price" />
 
-            <label htmlFor="category">Category: </label>
-            <input name="category" type="text" list="cat" />
-                <datalist id="cat">
-                    <option value="Animal Products" />
-                    <option value="Beans" />
-                    <option value="Cereals" />
-                    <option value="Fruits" />
-                    <option value="Peas" />
-                    <option value="Roots & Tubbers" />
-                    <option value="Seeds & Nuts" />
-                    <option value="Vegetables" />
-                    <option value="Other" />
-                </datalist>
+            <TextField name="category" type="text" select value="Animal Products"  helperText="Please Select a Category" >
+                    <MenuItem label="Animal Products" >Animal Products</MenuItem>
+                    <MenuItem value="Beans" >Beans</MenuItem>
+                    <MenuItem value="Cereals" >Cereals</MenuItem>
+                    <MenuItem value="Fruits" >Fruits</MenuItem>
+                    <MenuItem value="Peas" >Peas</MenuItem>
+                    <MenuItem value="Roots & Tubbers" >Roots & Tubbers</MenuItem>
+                    <MenuItem value="Seeds & Nuts" >Seeds & Nuts</MenuItem>
+                    <MenuItem value="Vegetables" >Vegetables</MenuItem>
+                    <MenuItem value="Other" >Other</MenuItem>
+            </TextField>
 
-            <label htmlFor="subcategory">Sub-Category</label>
-            <input name="subcategory" type="text" list="subcat" />
-                <datalist id="subcat">
-                    <option value="LiveStock" />
-                    <option value="Poultry" />
-                    <option value="None"/>
-                </datalist>
+            <TextField name="subcategory" type="text" select placeholder="Sub-Category"  >
+                    <MenuItem value="LiveStock" >LiveStock</MenuItem>
+                    <MenuItem value="Poultry" >Poultry</MenuItem>
+                    <MenuItem value="None">None</MenuItem>
+            </TextField>
         </form>
     )
 
