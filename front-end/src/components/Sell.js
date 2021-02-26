@@ -11,7 +11,6 @@ const initialState = {
     price: ""
 };
 
-const cat = {}
 
 const Sell = () => {
 
@@ -23,14 +22,19 @@ const Sell = () => {
         });
     };
 
+    const handleSubmit = e => {
+        e.preventDefault();
+        return item;
+    }
+
 
     return (
-        <form className="sellitem">
+        <form className="sellitem" onSubmit={handleSubmit} >
             <TextField name="item" placeholder="Item" onChange={handleChange} />
 
-            <TextField name="price" type="number" placeholder="Price" />
+            <TextField name="price" type="number" placeholder="Price" onChange={handleChange} />
 
-            <TextField name="category" type="text" select value="Animal Products"  helperText="Please Select a Category" >
+            <TextField name="category" type="text" select value="Animal Products"  helperText="Please Select a Category" onChange={handleChange} >
                     <MenuItem label="Animal Products" >Animal Products</MenuItem>
                     <MenuItem value="Beans" >Beans</MenuItem>
                     <MenuItem value="Cereals" >Cereals</MenuItem>
@@ -42,7 +46,7 @@ const Sell = () => {
                     <MenuItem value="Other" >Other</MenuItem>
             </TextField>
 
-            <TextField name="subcategory" type="text" select placeholder="Sub-Category"  >
+            <TextField name="subcategory" type="text" select placeholder="Sub-Category" onChange={handleChange} >
                     <MenuItem value="LiveStock" >LiveStock</MenuItem>
                     <MenuItem value="Poultry" >Poultry</MenuItem>
                     <MenuItem value="None">None</MenuItem>
