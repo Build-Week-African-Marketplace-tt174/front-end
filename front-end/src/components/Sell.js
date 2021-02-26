@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 
-initialState = {
+const initialState = {
     category: "",
     subcategory: "",
     item: "",
@@ -8,6 +8,15 @@ initialState = {
 };
 
 const Sell = () => {
+
+    const [item, setItem] = useState(initialState);
+
+    const handleChange = e => {
+        setItem({
+            [e.target.name]: e.target.value
+        });
+    };
+
 
     return (
         <form>
@@ -18,7 +27,7 @@ const Sell = () => {
             <input name="price" type="number" />
 
             <label htmlFor="category">Category: </label>
-            <input name="category" type="text" list="cat">
+            <input name="category" type="text" list="cat" />
                 <datalist id="cat">
                     <option value="Animal Products" />
                     <option value="Beans" />
@@ -30,16 +39,14 @@ const Sell = () => {
                     <option value="Vegetables" />
                     <option value="Other" />
                 </datalist>
-            </input>
 
             <label htmlFor="subcategory">Sub-Category</label>
-            <input name="subcategory" type="text" list="subcat">
+            <input name="subcategory" type="text" list="subcat" />
                 <datalist id="subcat">
                     <option value="LiveStock" />
                     <option value="Poultry" />
                     <option value="None"/>
                 </datalist>
-            </input>
         </form>
     )
 
