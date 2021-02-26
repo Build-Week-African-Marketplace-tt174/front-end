@@ -35,3 +35,14 @@ html{
   margin-top: 5rem;
   padding-top: 5rem;
 }
+
+
+
+/* Sell Form */
+
+.sellitem {
+  display: flex;
+  flex-direction: column;
+  width: 50rem;
+  margin: 4rem;
+}
