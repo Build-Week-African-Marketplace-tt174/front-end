@@ -13,8 +13,9 @@ function App() {
                 <Link to="/about">About Us</Link>
                 <Link to="/signup">Signup</Link>
             </nav>
+
          <Route path='/signup' component={Signup} />
-         <Route path="/about" compoennt={About} />
+         <Route path="/about" component={About} />
         </div>
         </Router>
     )
