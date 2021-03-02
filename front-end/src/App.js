@@ -4,6 +4,7 @@ import Signup from './components/Signup';
 import About from './components/About';
 import Sell from './components/Sell';
 import './App.css';
+import Nav from './components/Nav'
 
 
 function App() {
@@ -14,7 +15,6 @@ function App() {
                 <Link to="/about">About Us</Link>
                 <Link to="/signup">Signup</Link>
             </nav>
-
          <Route path='/signup' component={Signup} />
          <Route path="/about" component={About} />
          <Route path="/sell" component={Sell} />
