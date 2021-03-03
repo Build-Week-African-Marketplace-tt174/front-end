@@ -1,5 +1,5 @@
 html{
-	font-size: 62.5%;
+	font-size: 72.5%;
 }
 
 /* About Page */
@@ -45,4 +45,27 @@ html{
   flex-direction: column;
   width: 50rem;
   margin: 4rem;
+}
+
+.welcome {
+  background-color:peru;
+}
+
+.welcome p {
+  font-size: 22px;
+}
+
+.title {
+    text-align: center;
+    padding: 10px;
+    font-weight: 800;
+    color: transparent;
+    font-size: 90px;
+    background: url("https://png.pngtree.com/thumb_back/fh260/back_our/20190614/ourmid/pngtree-african-savanna-silhouette-background-illustration-image_121805.jpg") repeat;
+    background-position: 40% 50%;
+    -webkit-background-clip: text;
+    position: relative;
+    text-align: center;
+    line-height: 90px;
+    letter-spacing: -8px;
 }

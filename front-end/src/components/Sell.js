@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import MenuItem from '@material-ui/core/MenuItem';
+import Nav from "./Nav"
 
 
 
@@ -29,7 +30,10 @@ const Sell = () => {
 
 
     return (
+        <div>
+            <Nav/>
         <form className="sellitem" onSubmit={handleSubmit} >
+
             <TextField name="item" placeholder="Item" onChange={handleChange} />
 
             <TextField name="price" type="number" placeholder="Price" onChange={handleChange} />
@@ -52,6 +56,7 @@ const Sell = () => {
                     <MenuItem value="None">None</MenuItem>
             </TextField>
         </form>
+        </div>
     )
 
 };

@@ -67,6 +67,26 @@ export default function Nav(props) {
                 >
                   Login
                 </Button>
+              </RouterLink> 
+              <RouterLink style={{ textDecoration: "none" }} to="/about">
+                <Button
+                  href="#"
+                  color="primary"
+                  variant="contained"
+                  className={classes.link}
+                >
+                  About
+                </Button>
+                </RouterLink>
+                <RouterLink style={{ textDecoration: "none" }} to="/sell">
+                <Button
+                  href="#"
+                  color="primary"
+                  variant="contained"
+                  className={classes.link}
+                >
+                  Sell
+                </Button>
               </RouterLink>
           </nav>
         </Toolbar>

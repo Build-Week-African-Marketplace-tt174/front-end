@@ -1,9 +1,11 @@
 import React from "react";
+import Nav from "./Nav"
 
 const About = () => {
 
     return(
         <div>
+            < Nav/>
             <h1 className="title">Get to know the Team!</h1>
 
             <h2 className="role">Front End</h2>
