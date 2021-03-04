@@ -42,6 +42,7 @@ const ButtonWrapper = styled.div`
   border: 2px solid black;
   padding: 5px;
   background-color: white;
+  box-shadow: 3px 3px gray;
 `;
 
 const Banner = styled.div`
