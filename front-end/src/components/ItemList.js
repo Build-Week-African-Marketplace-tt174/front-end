@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import Nav from './Nav';
 import ItemCard from './ItemCard'
+import { connect } from 'react-redux';
+import { getItems } from '../actions';
 
-const ItemList = props => {
+const ItemList = ({ items, isFetching, error, ...props}) => {
     const myItems = [];
     const [item, setItems] = useState([])
     console.log("itemList", item)
@@ -24,6 +26,14 @@ return (
 )
 
 
-}
+};
 
-export default ItemList
+const mapStateToProps = state => {
+    return {
+        items: state.items,
+        isFetching: state.isFetching,
+        error: state.error
+    };
+};
+
+export default connect(mapStateToProps, { getItems })(ItemList)

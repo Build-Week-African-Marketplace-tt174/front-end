@@ -2,7 +2,8 @@ import { FETCH_ITEMS } from '../actions';
 
 const initialState = {
     items: [],
-    isFetching: false
+    isFetching: false,
+    error: ''
 };
 
 export const reducer = (state = initialState, action) => {

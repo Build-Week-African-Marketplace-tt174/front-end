@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
 
-export const FETCH_ITEMS = "FETCH_ITEMS"
+export const FETCH_ITEMS = "FETCH_ITEMS";
 
 export const getItems = () => (dispatch) => {
     dispatch({type: FETCH_ITEMS});
