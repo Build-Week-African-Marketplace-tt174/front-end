@@ -9,7 +9,7 @@ const ItemList = props => {
     const [item, setItems] = useState([])
     console.log("itemList", item)
     console.log(props)
-
+    
 
 return (
     <div>
@@ -24,6 +24,8 @@ return (
 )
 
 
-}
+};
+
+
 
 export default ItemList
