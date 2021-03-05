@@ -5,9 +5,13 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { makeStyles } from "@material-ui/core/styles";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
+
+
+
 
 const useStyles = makeStyles(theme => ({
     "@global": {
@@ -30,11 +34,27 @@ const useStyles = makeStyles(theme => ({
       margin: theme.spacing(6, 1.5)
     }
   }));
+
+
   
 
 export default function Nav(props) {
   const classes = useStyles();
   const [search, setSearch] = useState('')
+
+  const {push} = useHistory();
+
+  
+  const logout = e => {
+    e.preventDefault();
+
+    axiosWithAuth().get(`https://africanmarketplace-tt174.herokuapp.com/api/auth/logout`)
+      .then(res => {
+        console.log(res.data);
+        push("/login");
+      })
+      .catch(err => console.error("Could not Logout: ", err.message));
+  }
 
   return (
     <React.Fragment>
@@ -67,6 +87,11 @@ export default function Nav(props) {
                 >
                   Login
                 </Button>
+              <RouterLink style={{ textDecoration: "none"}} to="/login" >
+                <Button onClick={logout} href="#" color="primary" variant="contained" className={classes.link}>
+                  Logout
+                </Button>
+              </RouterLink>
               </RouterLink> 
               <RouterLink style={{ textDecoration: "none" }} to="/about">
                 <Button
@@ -78,14 +103,14 @@ export default function Nav(props) {
                   About
                 </Button>
                 </RouterLink>
-                <RouterLink style={{ textDecoration: "none" }} to="/sell">
+                <RouterLink style={{ textDecoration: "none" }} to="/itemlist">
                 <Button
                   href="#"
                   color="primary"
                   variant="contained"
                   className={classes.link}
                 >
-                  Sell
+                  Products
                 </Button>
               </RouterLink>
           </nav>
