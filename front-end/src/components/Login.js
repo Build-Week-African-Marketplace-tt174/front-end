@@ -32,7 +32,7 @@ text-decoration: none;
 
 const Login = () => {
 
-  const [ push ] = useHistory();
+  const { push } = useHistory();
 
   const [credentials, setCredentials] = useState({
     username: '',
@@ -53,7 +53,7 @@ const Login = () => {
       .then(res => {
         console.log("AM: Login.js: login res", res);
         localStorage.setItem("token", res.data.payload);
-        push("/signup");
+        push("/itemlist");
       })
   }
 
@@ -81,7 +81,7 @@ const Login = () => {
           value={credentials.password}
         />{" "}
         <ButtonWrapper>
-          <Button variant="contained" type="submit">
+          <Button variant="contained" type="submit" onClick={login}>
             Login
           </Button>
         </ButtonWrapper>
