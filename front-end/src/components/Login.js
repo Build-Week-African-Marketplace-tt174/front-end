@@ -49,7 +49,7 @@ const Login = () => {
   const login = e => {
     e.preventDefault();
 
-    axiosWithAuth().post(`https://africanmarketplace-tt174.herokuapp.com/api/auth/login`, credentials)
+    axiosWithAuth().post(`https://africanmarketplace-tt174.herokuapp.com/api/auth/login`, {username: credentials.username, password: credentials.password})
       .then(res => {
         console.log("AM: Login.js: login res", res);
         localStorage.setItem("token", res.data.payload);
