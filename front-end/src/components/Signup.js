@@ -1,9 +1,11 @@
 import React from 'react';
 import TextField from "@material-ui/core/TextField";
+import { withFormik, Form } from "formik";
 import styled from "styled-components";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import Nav from "./Nav"
+import * as Yup from "yup";
 
 const FormWrapper = styled.div`
   display: flex;
@@ -73,5 +75,31 @@ const Signup = props => {
     );
 };
 
+const FormikApp = withFormik({
+  mapPropsToValues({ companyname, email, username, password}) {
+      return {
+          companyname: companyname || "",
+          email: email || "",
+          username: username || "",
+          password: password || ""
+      };
+  },
+  validationSchema: Yup.object().shape({
+      companyname: Yup.string("Company name is required")
+      .required(),
+      email: Yup.string()
+      .email("Invalid Email")
+      .required("Email is required"),
+      username: Yup.string()
+      .required("Username is required"),
+      password: Yup.string()
+      .min(8, "Password must be 8 characters or longer")
+      .required()
+  }),
+  handleSubmit(values, { props }) {
+      props.registerUser( values, props.history);
+  }
+})(Signup);
 
-export default Signup
+
+export default FormikApp

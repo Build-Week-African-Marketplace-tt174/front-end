@@ -38,14 +38,13 @@ width: 25%;
 
 const ItemCard = (props) => {
     console.log("thrown text", props)
-    const history = useHistory();
-    const id = localStorage.getItem("id");
+    const [item, setItems] = useState([])
 
     return (
        <Card>
-            <Name>Title: {props.card.name}</Name>
-            <Description>Source: {props.card.description}</Description>
-            <Price>Ingredients: {props.card.price}</Price>
+            <Name>Name: {item.name}</Name>
+            <Description>Description: {item.description}</Description>
+            <Price>Price: {item.price}</Price>
        </Card>
     )
 }

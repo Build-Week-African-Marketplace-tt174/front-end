@@ -31,7 +31,7 @@ const Sell = () => {
 
     return (
         <div>
-            <Nav/>
+            <Nav />
         <form className="sellitem" onSubmit={handleSubmit} >
 
             <TextField name="item" placeholder="Item" onChange={handleChange} />

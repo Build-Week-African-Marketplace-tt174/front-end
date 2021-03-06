@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.3",
+    "axios": "^0.21.1",
     "cra-template": "1.1.2",
     "formik": "^2.2.6",
     "material-ui": "^0.20.2",
