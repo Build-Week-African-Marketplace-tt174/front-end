@@ -22,6 +22,7 @@ const ItemList = props => {
     
     }, [])
 
+
     //https://test-deploy-sauti.herokuapp.com/api/items
 return (
     <div>
@@ -36,7 +37,9 @@ return (
 )
 
 
-}
+};
+
+
 
 const mapStateToProps = state => {
     console.log("text", state)
