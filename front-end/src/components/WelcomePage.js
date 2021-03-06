@@ -96,7 +96,13 @@ function WelcomePage() {
         <div>
           <NewLink>
         <Link to="/login">
-          <p>Login</p>
+          <Button
+            color="primary"
+            variant="contained"
+            className={classes.link}
+          >
+            Login
+          </Button>
         </Link>
         </NewLink>
         </div>
