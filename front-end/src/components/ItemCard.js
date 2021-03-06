@@ -38,13 +38,13 @@ width: 25%;
 
 const ItemCard = (props) => {
     console.log("thrown text", props)
-    const [item, setItems] = useState([])
+    
 
     return (
        <Card>
-            <Name>Name: {item.name}</Name>
-            <Description>Description: {item.description}</Description>
-            <Price>Price: {item.price}</Price>
+            <Name>Name: {props.item.name}</Name>
+            <Description>Description: {props.item.description}</Description>
+            <Price>Price: {props.item.price}</Price>
        </Card>
     )
 }

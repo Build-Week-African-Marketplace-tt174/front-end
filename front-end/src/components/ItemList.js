@@ -12,8 +12,8 @@ const ItemList = props => {
         axios.get("https://test-deploy-sauti.herokuapp.com/api/items")
     
         .then((res)=>{
-          console.log(res)
-          setItems(res.data.results)
+          console.log("AM: ItemList.js: useEffect Res: ",res);
+          setItems(res.data);
     
         })
         .catch((err)=>{
@@ -29,8 +29,8 @@ return (
         <Nav />
      <div className="item-container">
          {console.log(`item`, item)}
-      {props.item && props.item.map(item => (
-         <ItemCard item={item.name} />
+      {item.map(item => (
+         <ItemCard item={item} />
       ))}
      </div>
     </div>

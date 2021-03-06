@@ -5,12 +5,9 @@ import styled from "styled-components";
 import Button from "@material-ui/core/Button";
 import { Link, useHistory } from "react-router-dom";
 import Nav from "./Nav"
-<<<<<<< HEAD
 import * as Yup from "yup";
-=======
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
->>>>>>> 71c18af7dea2af353d46e7d0c9b418b9243caea0
 
 const FormWrapper = styled.div`
   display: flex;
