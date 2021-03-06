@@ -49,10 +49,10 @@ const Login = () => {
   const login = e => {
     e.preventDefault();
 
-    axiosWithAuth().post(`https://africanmarketplace-tt174.herokuapp.com/api/auth/login`, {username: credentials.username, password: credentials.password})
+    axiosWithAuth().post(`https://test-deploy-sauti.herokuapp.com/api/auth/login`, {username: credentials.username, password: credentials.password})
       .then(res => {
         console.log("AM: Login.js: login res", res);
-        localStorage.setItem("token", res.data.payload);
+        localStorage.setItem("token", res.data.token);
         push("/itemlist");
       })
   }

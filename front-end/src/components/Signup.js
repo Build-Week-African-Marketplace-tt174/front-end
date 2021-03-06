@@ -50,7 +50,7 @@ const Signup = props => {
   const signup = e => {
     e.preventDefault();
 
-    axiosWithAuth().post(`https://africanmarketplace-tt174.herokuapp.com/api/auth/register`, {company: newUser.company, password: newUser.password, username: newUser.username, email: newUser.email})
+    axiosWithAuth().post(`https://test-deploy-sauti.herokuapp.com/api/auth/register`, {company: newUser.company, username: newUser.username, email: newUser.email, password: newUser.password})
       .then(res => {
         console.log("AM: Signup.js: signup res", res.data);
 

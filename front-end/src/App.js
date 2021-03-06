@@ -1,11 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import WelcomePage from './components/WelcomePage'
 import Signup from './components/Signup';
 import About from './components/About';
 import Sell from './components/Sell';
 import Login from './components/Login';
-import ItemList from './components/ItemList'
+import ItemList from './components/ItemList';
+import ProtectedRoute from './components/ProtectedRoute';
 import './App.css';
 
 
@@ -13,12 +14,14 @@ function App() {
     return (
         <Router>
         <div className="App">
-         <Route exact path='/' component={WelcomePage} />
-         <Route path='/signup' component={Signup} />
-         <Route path='/login' component={Login} />
-         <Route path='/about' component={About} />
-         <Route path='/sell' component={Sell} />
-         <Route path='/itemlist' component={ItemList} />
+            <Switch>
+                <Route exact path='/' component={WelcomePage} />
+                <Route path='/signup' component={Signup} />
+                <Route path='/login' component={Login} />
+                <Route path='/about' component={About} />
+                <ProtectedRoute exact path='/sell' component={Sell} />
+                <Route path='/itemlist' component={ItemList} />
+            </Switch>
         </div>
         </Router>
     )
