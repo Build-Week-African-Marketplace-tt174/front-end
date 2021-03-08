@@ -69,3 +69,7 @@ html{
     line-height: 90px;
     letter-spacing: -8px;
 }
+
+.item-list {
+  background: url('https://images.assetsdelivery.com/compings_v2/tarapong/tarapong1508/tarapong150800006.jpg');
+}
