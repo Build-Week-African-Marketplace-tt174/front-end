@@ -19,13 +19,14 @@ const Sell = () => {
 
     const handleChange = e => {
         setItem({
+            ...item,
             [e.target.name]: e.target.value
         });
     };
 
     const handleSubmit = e => {
         e.preventDefault();
-        return item;
+        
     }
 
 
