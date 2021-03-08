@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
 import { Link as RouterLink, useHistory } from "react-router-dom";
-import styled from "styled-components";
 import { makeStyles } from "@material-ui/core/styles";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
@@ -40,7 +38,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function Nav(props) {
   const classes = useStyles();
-  const [search, setSearch] = useState('')
+  // const [search, setSearch] = useState('')
 
   const {push} = useHistory();
 
