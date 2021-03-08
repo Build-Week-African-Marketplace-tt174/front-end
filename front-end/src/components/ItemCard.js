@@ -1,8 +1,5 @@
-import React, { useState } from "react";
-import Button from "@material-ui/core/Button";
+import React from "react";
 import styled from "styled-components";
-import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
 import '../App.css'
 
 
